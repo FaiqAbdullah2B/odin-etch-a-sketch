@@ -1,26 +1,30 @@
 body{
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 20px;
     height: 100vh;
     width: 100vw;
 }
 
-.container {
+#container {
     display: flex;
     justify-content: flex-start;
     gap: 0px;
     flex-direction: column;
     height: 800px;
     width: 800px;
+    border: 1px solid black;
 }
 
 .row {
     display: flex;
     justify-content: flex-start;
-    height: 200px;
-    width: 800px;
+    flex-grow: 1;
+    /* height: 200px;
+    width: 800px; */
 }
 
 .box {
