@@ -1,6 +1,21 @@
 let setGridButton = document.querySelector("#setGrid");
 let container = document.querySelector("#container");
 
+function getRandomColor() {
+    let letters = "0123456789ABCDEF";
+    let color = "#";
+
+    for(let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+
+    return color;
+}
+
+function getRandom255() {
+   return Math.floor(Math.random() * 256);
+}
+
 function createGrid(size) {
     container.textContent = '';
 
@@ -12,8 +27,14 @@ function createGrid(size) {
         for (let i = 0; i < size; i++) {
             let spaen = document.createElement("div");
 
+            let opacity = 0;
+
             spaen.addEventListener("click", () => {
-                console.log("L");
+                if(opacity < 1)
+                    opacity += 0.1;
+
+                spaen.style.backgroundColor = `rgba(${getRandom255()},
+                ${getRandom255()}, ${getRandom255()}, ${opacity})`;
             })
 
             spaen.classList.add("box");
